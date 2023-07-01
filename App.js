@@ -62,3 +62,119 @@ if (guessedNumber === secretNumber) {
 } else {
   document.write("Sorry, the secret number was " + secretNumber);
 }
+
+// Chapter_31_to_34:
+// Question_01:
+var currentDate = new Date();
+document.write("Current Date and Time: " + currentDate);
+
+// Question_02:
+var currentDate = new Date();
+var currentMonth = currentDate.getMonth();
+var monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+alert("Current Month: " + monthNames[currentMonth]);
+
+// Question_03:
+var currentDate = new Date();
+var currentDay = currentDate.getDay();
+var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+alert("Current Day: " + dayNames[currentDay]);
+
+// Question_04:
+var currentDate = new Date();
+var currentDay = currentDate.getDay();
+if (currentDay === 6 || currentDay === 0) {
+  alert("It's Fun day");
+} else {
+  alert("It's not Fun day");
+}
+
+// Question_05:
+var currentDate = new Date();
+var currentDay = currentDate.getDate();
+if (currentDay < 16) {
+  document.write("First fifteen days of the month");
+} else {
+  document.write("Last days of the month");
+}
+
+// Question_06:
+
+var currentTime = new Date().getTime();
+var minutesSince1970 = Math.floor(currentTime / (1000 * 60));
+document.write("Minutes since midnight, Jan. 1, 1970: " + minutesSince1970);
+
+
+// Question_07:
+// Get the current hour
+var currentTime = new Date().getHours();
+if (currentTime < 12) {
+  alert("It's AM");
+} else {
+  alert("It's PM");
+}
+
+// Question_08:
+var laterDate = new Date(2020, 11, 31);
+document.write("Later Date: " + laterDate);
+
+// Question_09:
+
+var startingDate = new Date('June 18, 2015');
+var currentDate = new Date();
+var timeDifference = currentDate.getTime() - startingDate.getTime();
+var daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+alert("Number of days passed since 1st Ramadan: " + daysPassed);
+
+// Question_10:
+
+var refDate = new Date();
+var tarDate = new Date('January 1, 2015');
+var timeDiff = Math.floor((refDate - tarDate) / 1000);
+document.write("Seconds elapsed since the beginning of 2015: " + timeDiff);
+
+// Question_11:
+
+var currentDate = new Date();
+var currentHours = currentDate.getHours();
+currentDate.setHours(currentHours + 1);
+document.write("Updated Date: " + currentDate);
+
+// Question_12:
+
+var currDate = new Date();
+currDate.setFullYear(currDate.getFullYear() - 100);
+alert("Updated Date: " + currDate);
+
+// Question_13:
+
+var age = prompt("Enter your age:");
+var currentYear = new Date().getFullYear();
+var birthYear = currentYear - age;
+document.write("Your birth year is: " + birthYear);
+
+//Question_14:
+
+var customerName = prompt("Enter customer name:");
+var currentMonth = prompt("Enter current month:");
+var numberOfUnits = parseFloat(prompt("Enter number of units consumed:"));
+var chargesPerUnit = parseFloat(prompt("Enter charges per unit:"));
+var latePaymentSurchargeRate = parseFloat(prompt("Enter late payment surcharge rate (%):"));
+var netAmountPayable = numberOfUnits * chargesPerUnit;
+var latePaymentSurcharge = (netAmountPayable * latePaymentSurchargeRate) / 100;
+var grossAmountPayable = netAmountPayable + latePaymentSurcharge;
+netAmountPayable = netAmountPayable.toFixed(2);
+latePaymentSurcharge = latePaymentSurcharge.toFixed(2);
+grossAmountPayable = grossAmountPayable.toFixed(2);
+document.write("<h2>K-Electric Bill</h2>");
+document.write("<strong>Customer Name:</strong> " + customerName + "<br>");
+document.write("<strong>Current Month:</strong> " + currentMonth + "<br>");
+document.write("<strong>Number of Units:</strong> " + numberOfUnits + "<br>");
+document.write("<strong>Charges per Unit:</strong> $" + chargesPerUnit.toFixed(2) + "<br>");
+document.write("<strong>Net Amount Payable (within Due Date):</strong> $" + netAmountPayable + "<br>");
+document.write("<strong>Late Payment Surcharge:</strong> $" + latePaymentSurcharge + "<br>");
+document.write("<strong>Gross Amount Payable (after Due Date):</strong> $" + grossAmountPayable + "<br>");
+
